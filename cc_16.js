@@ -1,4 +1,4 @@
-// Task 2 
+// Task 2: Fetch Products with .then() method
 const BASE_URL = 'https://www.course-api.com/javascript-store-products'; // API URL 
 
 // using function fetchProductThen()
@@ -17,3 +17,19 @@ function fetchProductsThen() {
       console.error('Fetch failed:', error);
     }); // Use .catch() to log any errors
 }
+
+// Task 3: Fetch Products with async/await
+async function fetchProductsAsync() {
+    try {
+      const response = await fetch(BASE_URL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok"); // Error message if the response is not ok
+      }
+      const products = await response.json(); 
+      displayProducts(products); // used to render product to the page.
+    } catch (error) {
+      handleError(error); // If an error occurs, passes it to handleError(error)
+    }
+  }
+
+  
