@@ -54,8 +54,11 @@ function displayProducts(products) {
     });
   }
   
-  // Task 5: Reusable Error Handler
+// Task 5: Reusable Error Handler
 function handleError(error) {
     console.error("An error occurred:", error.message);
   }
   
+// Task 6: Call Your Fetch Functions 
+fetchProductsThen();
+fetchProductsAsync();
